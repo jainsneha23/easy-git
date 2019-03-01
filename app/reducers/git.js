@@ -1,4 +1,4 @@
-export default function git(state = {branches: []}, action) {
+export default function git(state = {}, action) {
   switch (action.type) {
     case 'SET_REPOSITORY':
       return { ...state, repo: action.repo };

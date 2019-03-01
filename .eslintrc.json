@@ -9,6 +9,7 @@
   },
   "rules": {
     "promise/always-return": "off",
-    "promise/catch-or-return": "off"
+    "promise/catch-or-return": "off",
+    "react/prop-types": "off"
   }
 }

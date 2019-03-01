@@ -1,8 +1,10 @@
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styles from './Home.css';
 
-class Home extends Component {
+import GitActions from '../actions';
+
+class Repo extends Component {
   componentDidMount() {
     const {
       getRepository,
@@ -19,7 +21,7 @@ class Home extends Component {
   render() {
     const { name, branch, branches } = this.props;
     return (
-      <div className={styles.container}>
+      <div>
         <h2>{name}</h2>
         {branch}
         <ul>{branches && branches.map(b => <li>{b}</li>)}</ul>
@@ -28,14 +30,19 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
-  getRepository: PropTypes.func.isRequired,
-  getCurrentBranch: PropTypes.func.isRequired,
-  getRepoUrl: PropTypes.func.isRequired,
-  getAllBranches: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  branch: PropTypes.string.isRequired,
-  branches: PropTypes.array.isRequired
-};
+function mapStateToProps(state) {
+  return {
+    name: state.git.name,
+    branch: state.git.currentBranch,
+    branches: state.git.branches
+  };
+}
 
-export default Home;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(GitActions, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Repo);

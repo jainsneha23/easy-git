@@ -92,7 +92,6 @@ export default merge.smart(baseConfig, {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               sourceMap: true,
               importLoaders: 1,
               localIdentName: '[name]__[local]__[hash:base64:5]'
@@ -128,7 +127,6 @@ export default merge.smart(baseConfig, {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               sourceMap: true,
               importLoaders: 1,
               localIdentName: '[name]__[local]__[hash:base64:5]'
