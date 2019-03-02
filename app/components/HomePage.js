@@ -1,53 +1,23 @@
-import * as React from 'react';
-import {Card, CardDeck} from 'react-bootstrap';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {Button, ListGroup} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import routes from '../constants/routes';
+
+const repos = ['homepage-web', 'easy-git', 'storeloactor-git'];
 
 export default class HomePage extends React.Component {
 
   render() {
     return (
-      <CardDeck>
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to
-              additional content. This content is a little bit longer.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This card has supporting text below as a natural lead-in to additional
-              content.{' '}
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to
-              additional content. This card has even longer content than the first to
-              show that equal height action.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-      </CardDeck>
+      <div className="m-5">
+        <h2>Git repositories</h2>
+        <Button variant="info" className="my-2"><Link class="text-white" to={routes.ADDREPO}>Add New Repository</Link></Button>
+        <ListGroup>
+          {repos.map(repo => <ListGroup.Item key={repo}>{repo}</ListGroup.Item>)}
+        </ListGroup>
+      </div>
     );
   }
 }
