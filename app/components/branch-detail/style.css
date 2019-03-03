@@ -1,0 +1,29 @@
+.column {
+  padding: 5px;
+}
+
+.column .border {
+  border: 1px solid #e4e6e8;
+}
+
+.margin-0 {
+  margin: 0;
+}
+.padding-0 {
+  padding: 0;
+}
+.title {
+  padding: 7px;
+  background: #e9ecef;
+  margin: 0;
+}
+.body {
+  font-size: 13px;
+}
+
+.body.img {
+  overflow: hidden;
+}
+.body.img img {
+  height: 450px;
+}
