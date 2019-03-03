@@ -21,11 +21,13 @@ export default class AddRepo extends React.Component {
       }
     ];
     return (
-      <div className="m-5">
+      <div>
         <BreadCrumb data={breadcrumb}/>
-        <Button block variant="info" className="my-2">Git Clone</Button>
-        <Button block variant="info" className="my-2">Git Init</Button>
-        <Button block variant="info" className="my-2">Scan Directories</Button>
+        <div className="m-5">
+          <Button block variant="info" className="my-2">Git Clone</Button>
+          <Button block variant="info" className="my-2">Git Init</Button>
+          <Button block variant="info" className="my-2">Scan Directories</Button>
+        </div>
       </div>
     );
   }
