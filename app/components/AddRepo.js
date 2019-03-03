@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 import routes from '../constants/routes';
-import BreadCrumb from './breadcrumb/';
+import BreadCrumb from './breadcrumb';
 
 export default class AddRepo extends React.Component {
 

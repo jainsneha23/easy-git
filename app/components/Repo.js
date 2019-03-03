@@ -24,7 +24,7 @@ class Repo extends Component {
       <div>
         <h2>{name}</h2>
         {branch}
-        <ul>{branches && branches.map(b => <li>{b}</li>)}</ul>
+        <ul>{branches && branches.map(b => <li key={b}>{b}</li>)}</ul>
       </div>
     );
   }

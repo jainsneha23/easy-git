@@ -13,9 +13,16 @@ export default class HomePage extends React.Component {
     return (
       <div className="m-5">
         <h2>Git repositories</h2>
-        <Button variant="info" className="my-2"><Link class="text-white" to={routes.ADDREPO}>Add New Repository</Link></Button>
+        <Button variant="info" className="my-2">
+          <Link className="text-white" to={routes.ADDREPO}>Add New Repository</Link>
+        </Button>
         <ListGroup>
-          {repos.map(repo => <ListGroup.Item key={repo}>{repo}</ListGroup.Item>)}
+          {repos.map(repo =>
+            <ListGroup.Item key={repo}>
+              <Link to={routes.BRANCH_DETAIL}>
+                {repo}
+              </Link>
+            </ListGroup.Item>)}
         </ListGroup>
       </div>
     );
