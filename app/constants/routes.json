@@ -1,4 +1,5 @@
 {
   "HOME": "/",
-  "ADDREPO": "/add"
+  "ADDREPO": "/add",
+  "BRANCH_DETAIL": "/branch_detail"
 }

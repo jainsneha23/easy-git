@@ -2,7 +2,7 @@ import basename from '../utils/url';
 import GitCmd from '../utils/git-cmd';
 
 export function getRepository() {
-  const path = '/Users/py35/Documents/workspace/tesco/homepage-web/';
+  const path = '/Users/Joban/Desktop/Tesco/Branches/homepage-web/';
   const repo = new GitCmd({ 'git-dir': `${path}.git`, 'work-tree': path });
   return { type: 'SET_REPOSITORY', repo };
 }

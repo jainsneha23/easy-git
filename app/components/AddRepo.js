@@ -1,20 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {Button, Breadcrumb} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import routes from '../constants/routes';
+import BreadCrumb from './breadcrumb/';
 
 export default class AddRepo extends React.Component {
 
   render() {
+    const breadcrumb = [
+      {
+        id: 'some-id',
+        link: routes.HOME,
+        text: 'Home',
+        active: false
+      },
+      {
+        id: 'some-id-2',
+        link: '',
+        text: 'Add Repo',
+        active: true
+      }
+    ];
     return (
       <div className="m-5">
-        <Breadcrumb>
-          <Breadcrumb.Item as="div">
-            <Link to={routes.HOME}>Home</Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active>Add Repository</Breadcrumb.Item>
-        </Breadcrumb>
-        
+        <BreadCrumb data={breadcrumb}/>
         <Button block variant="info" className="my-2">Git Clone</Button>
         <Button block variant="info" className="my-2">Git Init</Button>
         <Button block variant="info" className="my-2">Scan Directories</Button>
